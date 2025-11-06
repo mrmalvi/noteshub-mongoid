@@ -2,8 +2,9 @@ source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.3"
-gem "dartsass-sprockets"
+gem 'mongoid', '~> 8.0'
 
+gem "dartsass-sprockets"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 # gem "propshaft"
 gem "sprockets-rails"
@@ -20,8 +21,8 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 gem 'simple_form'
-gem 'mongoid', '~> 8.0'
 
+gem "devise"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
