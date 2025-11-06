@@ -1,28 +1,36 @@
-# README
-<!-- brew install mongodb-community@7.0 --ignore-dependencies -->
-<!-- brew install mongosh -->
+# 📝 NotesHub
 
+A simple and elegant note-taking application built with **Ruby on Rails**.
+It allows you to create, edit, delete, and view notes — each with optional tags.
+The UI is powered by **Bootstrap 5** and **Simple Form** for clean design.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
 
-Things you may want to cover:
+## 🚀 Features
 
-* Ruby version
+- Create, view, edit, and delete notes
+- Add multiple tags (comma-separated)
+- Responsive Bootstrap 5 design
+- Clean and modular Rails MVC structure
+- Easy MongoDB
 
-* System dependencies
+---
 
-* Configuration
+## 🧰 Tech Stack
 
-* Database creation
+| Layer | Technology |
+|-------|-------------|
+| **Backend** | Ruby on Rails 7+ |
+| **Frontend** | Bootstrap 5 + Simple Form |
+| **Database** | MongoDB (via Mongoid) or PostgreSQL |
+| **Language** | Ruby 3.2+ |
+| **Version Control** | Git + GitHub |
 
-* Database initialization
+---
 
-* How to run the test suite
+## ⚙️ Installation
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# noteshub-mongoid
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/mrmalvi/noteshub.git
+cd noteshub
