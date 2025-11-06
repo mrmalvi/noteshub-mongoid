@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h3 class="card-title mb-4 text-center">New Note</h3>
+
+      <%= simple_form_for @note, html: { class: "needs-validation" } do |f| %>
+        <div class="mb-3">
+          <%= f.input :title, label: "Title", placeholder: "Enter title", input_html: { class: "form-control" } %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.input :content, as: :text, label: "Content", placeholder: "Write your note...", input_html: { class: "form-control", rows: 5 } %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.input :tags, label: "Tags (comma separated)", input_html: { class: "form-control", value: @note.tags&.join(", ") } %>
+        </div>
+
+        <div class="d-grid">
+          <%= f.button :submit, "Save Note", class: "btn btn-primary btn-lg" %>
+        </div>
+      <% end %>
+
+      <!-- Back button -->
+      <div class="text-center mt-3">
+        <%= link_to "← Back to Notes", notes_path, class: "btn btn-outline-secondary" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <div class="card shadow-lg border-0">
+    <div class="card-body">
+      <h2 class="card-title text-primary"><%= @note.title %></h2>
+      <p class="card-text mt-3"><%= simple_format(@note.content) %></p>
+
+      <% if @note.tags.any? %>
+        <p class="mt-4">
+          <strong class="text-muted">Tags:</strong>
+          <% @note.tags.each do |tag| %>
+            <span class="badge bg-secondary me-1"><%= tag %></span>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+
+    <div class="card-footer bg-white d-flex justify-content-between">
+      <%= link_to "Back to Notes", notes_path, class: "btn btn-outline-secondary" %>
+      <div>
+        <%= link_to "Edit", edit_note_path(@note), class: "btn btn-primary me-2" %>
+        <%= link_to "Delete", note_path(@note),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
