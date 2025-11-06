@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <%= link_to "NotesHub", root_path, class: "navbar-brand fw-bold" %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <% if user_signed_in? %>
+          <li class="nav-item me-3">
+            <span class="navbar-text text-white">
+              👋 Hello, <%= current_user.username.presence || current_user.email %>
+            </span>
+          </li>
+          <li class="nav-item">
+            <%= link_to "My Notes", notes_path, class: "nav-link text-white" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New Note", new_note_path, class: "nav-link text-white" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, method: :delete, class: "btn btn-outline-light btn-sm ms-2" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign In", new_user_session_path, class: "btn btn-light btn-sm me-2" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-light btn-sm" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
